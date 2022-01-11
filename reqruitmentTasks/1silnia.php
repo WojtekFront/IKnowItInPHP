@@ -3,26 +3,21 @@
 // zostanie przekazana wartość (input), która sprawdzi i wyliczy silnię
 
 
+$zmienna = 5;
 
 
-$zmienna = 2;
 function silnia($value)
 {
     if (!isset($value) || is_null($value)) {
-        echo "wprowadzona zmienna jest niepoprawna1 <br>";
+        //echo "wprowadzona zmienna jest niepoprawna1 <br>";
         $result = "wprowadzona zmienna jest niepoprawna <br>";
     } elseif (!czyToInt($value)) { //sprawdzenie czy zawiera znaki specjalne
-        echo "wprowadzona zmienna jest niepoprawna2 <br>";
+        //echo "wprowadzona zmienna jest niepoprawna2 <br>";
         $result = "wprowadzona zmienna jest niepoprawna <br>";
-    } elseif (true) {
-        $result = 1;
-        for ($x = 1; $x <= $value; $x++) {
-            $result *= $x;
-            echo $x . " - x <br>";
-            echo $result . " - result<br>";
-        }
+    } elseif ($value >= 0) {
+        $result = wyliczSilnie($value);
     } else {
-        echo "Inny efekt <br>";
+        //  echo "Inny efekt <br>";
         $result = "Inny efekt <br>";
     }
     return $result;
@@ -30,19 +25,17 @@ function silnia($value)
 
 function czyToInt($value)
 {
-    if (is_integer($value)) {
-        $result = czyJestWiekszyOdZera($value) ? true : false;
-    } else {
-        $result = false;
-    }
+    $result = is_integer($value) ? true : false;
     return $result;
 }
 
-function czyJestWiekszyOdZera($value)
+function wyliczSilnie($value)
 {
-    echo "czy jest większa od zera?";
-    exit(2);
+    $result = 1;
+    for ($x = 1; $value >= $x; $x++) {
+        $result *= $x;
+    }
+    return $result;
 }
-
 
 echo silnia($zmienna);
