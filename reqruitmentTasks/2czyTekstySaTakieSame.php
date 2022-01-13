@@ -7,6 +7,8 @@ $zmienna3 = "";
 $zmienna4 = "anna";
 $zmienna5 = "Ana";
 
+
+echo strncmp($zmienna1, $zmienna2, strlen($zmienna2)) . "<br>";
 // czy zmienne istnieją
 function zmiennaIstnieje($z1, $z2)
 {
@@ -28,7 +30,7 @@ function zmiennaJestStringiem($z1, $z2)
 // czy zmienne czy zmienne są tej samej długości
 function jakieMajaDlugosci($z1, $z2)
 {
-    return (strlen($z1) != strlen($z2))?true:false;
+    return (strlen($z1) != strlen($z2)) ? true : false;
 }
 
 // iterowanie dwóch zmiennych i porównywanie
